@@ -17,11 +17,11 @@ h1 {
 }
 
 form {
-  background-color: #eee;
-  display: grid;
-  grid-gap: 1em;
+  background-color: #FFFFFF;
   padding: 1em;
   max-width: 40ch;
+  text-align: center;
+  margin: auto;
 }
 
 input {
@@ -93,4 +93,7 @@ h3, p {
   text-align: justify;
 }
 
+.plan {
+  text-align: center;
+}
 

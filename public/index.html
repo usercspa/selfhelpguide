@@ -30,35 +30,95 @@
       />
       <h1>Develop a self-care plan</h1>
       <br />
-      <p>
-        Creating a personal self-care plan would help you to
-      </p>
     </header>
 
     <main>
-      <h2>Step 1:</h2>
+      <h2>Step 1: Positive self-care things I am doing</h2>
 
-      <p>Tell me your hopes and dreams:</p>
+      <h6>
+        Need some inspiration?
+        <a
+          href="https://www.changingfaces.org.uk/adviceandsupport/self-help/adults/self-care-planning"
+          >Take a look at the examples</a
+        >
+      </h6>
 
-      <form>
-        <label>
-          New Dream
-          <input
-            name="dream"
-            type="text"
-            maxlength="100"
-            required
-            placeholder="Dreams!"
-          />
-        </label>
-        <button type="submit" id="submit-dream">Add Dream</button>
-      </form>
+      <div class="plan">
+        <form id="step1">
+          <label>
+            Positive things I am doing
+            <input
+              name="activity"
+              type="text"
+              maxlength="100"
+              required
+              placeholder="Activity"
+            />
+          </label>
+          <button type="submit" id="submit-activity">Add activity</button>
+        </form>
+      </div>
 
-      <section class="dreams">
-        <ul id="dreams">
-          <em>loading dreams&hellip;</em>
-        </ul>
-      </section>
+      <h2>Step 2: Things I would like to change</h2>
+
+      <h6>
+        Need some inspiration?
+        <a
+          href="https://www.changingfaces.org.uk/adviceandsupport/self-help/adults/self-care-planning"
+          >Take a look at the examples</a
+        >
+      </h6>
+
+      <div class="plan">
+        <form id="step2">
+          <label>
+            Things I would like to change
+            <input
+              name="change"
+              type="text"
+              maxlength="100"
+              required
+              placeholder="Activity"
+            />
+          </label>
+          <button type="submit" id="submit-change">Add activity</button>
+        </form>
+      </div>
+
+      <h2>Step 3: Identify the potential barriers</h2>
+
+      <h6>
+        Need some inspiration?
+        <a href="https://www.mindful.org/why-you-need-a-self-care-plan/"
+          >Take a look at the examples</a
+        >
+      </h6>
+
+      <div class="plan">
+        <form id="step3">
+          <label>
+            Potential barriers
+            <input
+              name="barrier"
+              type="text"
+              maxlength="100"
+              required
+              placeholder="Potential barrier"
+            />
+          </label>
+          <button type="submit" id="submit-barrier">Add barrier</button>
+        </form>
+      </div>
+
+      <h2>
+        And finally ...
+      </h2>
+
+      <br />
+
+      <h1>
+        Share your plan with your friends!
+      </h1>
     </main>
 
     <footer>
