@@ -1,0 +1,157 @@
+<!-- This is a static file -->
+<!-- served from your routes in server.js -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- add shortcut icon -->
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="https://cdn.glitch.com/4d0710d8-b160-4f32-ada2-56138e1407fb%2FWhatsApp_Image_2021-01-30_at_09.09.11-removebg-preview.ico?v=1611998654983"
+      sizes="16x16"
+    />
+    <!-- stylesheet-->
+    <link rel="stylesheet" href="style.css" />
+    <!-- add font -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Cookie"
+      rel="stylesheet"
+    />
+    <title>Self-help Guide</title>
+  </head>
+
+  <body>
+    <header>
+      <img
+        class="logo"
+        src="https://cdn.glitch.com/4d0710d8-b160-4f32-ada2-56138e1407fb%2FWhatsApp_Image_2021-01-30_at_09.09.11-removebg-preview.png?v=1611998664680"
+      />
+      <h1>Develop a self-care plan</h1>
+      <br />
+      <h2>
+        Step 2: Things I would like to change
+      </h2>
+    </header>
+
+    <main>
+
+      <h6>
+        Need some inspiration?
+        <a
+          href="https://www.changingfaces.org.uk/adviceandsupport/self-help/adults/self-care-planning"
+          >Take a look at the examples</a
+        >
+      </h6>
+      
+          <div id="addChanges" class="header">
+        <h3 style="mx">Step 2: Things I would like to change</h3>
+        <input type="text" id="changeInput" placeholder="Type here..." />
+        <span onclick="newElement()" class="add">Add</span>
+      </div>
+
+      <ul id="changesList"></ul>
+
+
+     <br />
+      <button class="continue"><a href="/step3.html">Continue</a></button>
+      <br />
+    </main>
+
+    <footer>
+      <h3>
+        Read more:
+      </h3>
+
+      <ul>
+        <a href="https://www.mindful.org/why-you-need-a-self-care-plan/">
+          <p>
+            Why You Need a Self-Care Plan
+          </p></a
+        >
+      </ul>
+
+      <ul>
+        <a
+          href="https://schools.au.reachout.com/articles/developing-a-self-care-plan"
+        >
+          <p>
+            Developing a self-care plan
+          </p></a
+        >
+      </ul>
+      <ul>
+        <a
+          href="https://www.changingfaces.org.uk/adviceandsupport/self-help/adults/self-care-planning"
+        >
+          <p>
+            Creating a personalised self care plan
+          </p></a
+        >
+      </ul>
+    </footer>
+    
+       <script>
+      // Create a "close" button and append it to each list item
+      var activityList = document.getElementsByTagName("LI");
+      var i;
+      for (i = 0; i < activityList.length; i++) {
+        var span = document.createElement("SPAN");
+        var txt = document.createTextNode("\u00D7");
+        span.className = "close";
+        span.appendChild(txt);
+        activityList[i].appendChild(span);
+      }
+
+      // Click on a close button to hide the current list item
+      var close = document.getElementsByClassName("close");
+      var i;
+      for (i = 0; i < close.length; i++) {
+        close[i].onclick = function() {
+          var div = this.parentElement;
+          div.style.display = "none";
+        };
+      }
+
+      // Add a "checked" symbol when clicking on a list item
+      var list = document.querySelector("ul");
+      list.addEventListener(
+        "click",
+        function(ev) {
+          if (ev.target.tagName === "LI") {
+            ev.target.classList.toggle("checked");
+          }
+        },
+        false
+      );
+
+      // Create a new list item when clicking on the "Add" button
+      function newElement() {
+        var li = document.createElement("li");
+        var inputValue = document.getElementById("changeInput").value;
+        var t = document.createTextNode(inputValue);
+        li.appendChild(t);
+        if (inputValue === "") {
+          alert("You must write something!");
+        } else {
+          document.getElementById("changesList").appendChild(li);
+        }
+        document.getElementById("changeInput").value = "";
+
+        var span = document.createElement("SPAN");
+        var txt = document.createTextNode("\u00D7");
+        span.className = "close";
+        span.appendChild(txt);
+        li.appendChild(span);
+
+        for (i = 0; i < close.length; i++) {
+          close[i].onclick = function() {
+            var div = this.parentElement;
+            div.style.display = "none";
+          };
+        }
+      }
+    </script>
+  </body>
+</html>
