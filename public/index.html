@@ -31,10 +31,6 @@
       <h1>Develop a self-care plan</h1>
       <br />
     </header>
-
-    <main>
-      <h2>Step 1: Positive self-care things I am doing</h2>
-
       <h6>
         Need some inspiration?
         <a
@@ -42,22 +38,19 @@
           >Take a look at the examples</a
         >
       </h6>
+    <main>
+      <div id="addThings" class="header">
+  <h3 style="margin:5px">Step 1: Positive self-care things I am doing</h3>
+  <input type="text" id="activityInput" placeholder="Type here...">
+  <span onclick="newElement()" class="add">Add</span>
+</div>
+      
+<ul id="activityList">
 
-      <div class="plan">
-        <form id="step1">
-          <label>
-            Positive things I am doing
-            <input
-              name="activity"
-              type="text"
-              maxlength="100"
-              required
-              placeholder="Activity"
-            />
-          </label>
-          <button type="submit" id="submit-activity">Add activity</button>
-        </form>
-      </div>
+</ul>
+      
+      
+
       <br />
       <button class="continue"><a href="/step2.html">Continue</a></button>
       <br />
