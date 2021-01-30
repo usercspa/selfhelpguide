@@ -30,35 +30,33 @@
       />
       <h1>Develop a self-care plan</h1>
       <br />
+      <h2>
+        Step 2: Things I would like to change
+      </h2>
     </header>
 
     <main>
+
       <h6>
         Need some inspiration?
-        <a href="https://www.mindful.org/why-you-need-a-self-care-plan/"
+        <a
+          href="https://www.changingfaces.org.uk/adviceandsupport/self-help/adults/self-care-planning"
           >Take a look at the examples</a
         >
       </h6>
       
-      <div id="addBarriers" class="header">
-        <h3 style="margin:5px">Step 3: Identify potential barriers</h3>
-        <input type="text" id="barrierInput" placeholder="Type here..." />
+          <div id="addChanges" class="header">
+        <h3 style="mx">Step 2: Things I would like to change</h3>
+        <input type="text" id="changeInput" placeholder="Type here..." />
         <span onclick="newElement()" class="add">Add</span>
       </div>
 
-      <ul id="barriersList"></ul>
+      <ul id="changesList"></ul>
 
-      <br>
 
-      <h2>
-        And finally ...
-      </h2>
-
+     <br />
+      <button class="continue"><a href="/step3.html">Continue</a></button>
       <br />
-
-      <h1>
-        Share your plan with your friends!
-      </h1>
     </main>
 
     <footer>
@@ -94,7 +92,7 @@
       </ul>
     </footer>
     
-      <script>
+       <script>
       // Create a "close" button and append it to each list item
       var activityList = document.getElementsByTagName("LI");
       var i;
@@ -131,15 +129,15 @@
       // Create a new list item when clicking on the "Add" button
       function newElement() {
         var li = document.createElement("li");
-        var inputValue = document.getElementById("barrierInput").value;
+        var inputValue = document.getElementById("changeInput").value;
         var t = document.createTextNode(inputValue);
         li.appendChild(t);
         if (inputValue === "") {
           alert("You must write something!");
         } else {
-          document.getElementById("barriersList").appendChild(li);
+          document.getElementById("changesList").appendChild(li);
         }
-        document.getElementById("barrierInput").value = "";
+        document.getElementById("changeInput").value = "";
 
         var span = document.createElement("SPAN");
         var txt = document.createTextNode("\u00D7");

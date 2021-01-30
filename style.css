@@ -1,5 +1,3 @@
-/* this file is loaded by index.html and styles the page */
-
 * {
   box-sizing: border-box;
 }
@@ -39,20 +37,6 @@ input {
   width: 100%;
 }
 
-form button {
-  background-color: #bbbbf2;
-  border: 2px solid currentColor;
-  border-radius: 0.25em;
-  cursor: pointer;
-  font-size: inherit;
-  line-height: 1.4em;
-  padding: 0.25em 1em;
-  max-width: 20ch;
-}
-
-form button:hover {
-  background-color: lavender;
-}
 
 footer {
   margin-top: 3em;
@@ -126,7 +110,6 @@ ul {
   padding: 0;
 }
 
-/* Style the list items */
 ul li {
   cursor: pointer;
   position: relative;
@@ -143,24 +126,23 @@ ul li {
   user-select: none;
 }
 
-/* Set all odd list items to a different color (zebra-stripes) */
+
 ul li:nth-child(odd) {
   background: #333333;
 }
 
-/* Darker background-color on hover */
+
 ul li:hover {
   background: #226597;
 }
 
-/* When clicked on, add a background color and strike out text */
 ul li.checked {
   background: #113f67;
   color: #fff;
   text-decoration: line-through;
 }
 
-/* Add a "checked" mark when clicked on */
+
 ul li.checked::before {
   content: '';
   position: absolute;
@@ -174,7 +156,7 @@ ul li.checked::before {
   width: 7px;
 }
 
-/* Style the close button */
+
 .close {
   position: absolute;
   right: 0;
@@ -187,7 +169,7 @@ ul li.checked::before {
   color: white;
 }
 
-/* Style the header */
+
 .header {
   background-color: #a7d7c5;
   padding: 30px 40px;
@@ -195,14 +177,13 @@ ul li.checked::before {
   text-align: center;
 }
 
-/* Clear floats after the header */
+
 .header:after {
   content: "";
   display: table;
   clear: both;
 }
 
-/* Style the input */
 input {
   margin: 0;
   border: none;
@@ -213,7 +194,6 @@ input {
   font-size: 16px;
 }
 
-/* Style the "Add" button */
 .add {
   padding: 10px;
   width: 25%;

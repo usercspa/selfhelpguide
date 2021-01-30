@@ -30,30 +30,38 @@
       />
       <h1>Develop a self-care plan</h1>
       <br />
+      <h2>
+        Step 3: Identify potential barriers
+      </h2>
     </header>
 
     <main>
-
       <h6>
         Need some inspiration?
-        <a
-          href="https://www.changingfaces.org.uk/adviceandsupport/self-help/adults/self-care-planning"
+        <a href="https://www.mindful.org/why-you-need-a-self-care-plan/"
           >Take a look at the examples</a
         >
       </h6>
-      
-          <div id="addChanges" class="header">
-        <h3 style="margin:5px">Step 2: Things I would like to change</h3>
-        <input type="text" id="changeInput" placeholder="Type here..." />
+
+      <div id="addBarriers" class="header">
+        <h3 style="margin:5px">Potential barriers</h3>
+        <input type="text" id="barrierInput" placeholder="Type here..." />
         <span onclick="newElement()" class="add">Add</span>
       </div>
 
-      <ul id="changesList"></ul>
+      <ul id="barriersList"></ul>
 
-
-     <br />
-      <button class="continue"><a href="/step3.html">Continue</a></button>
       <br />
+
+      <h2>
+        And finally ...
+      </h2>
+
+      <br />
+
+      <h1>
+        Share your plan with your friends!
+      </h1>
     </main>
 
     <footer>
@@ -88,9 +96,9 @@
         >
       </ul>
     </footer>
-    
-       <script>
-      // Create a "close" button and append it to each list item
+
+    <script>
+      // add cross to each item in list
       var activityList = document.getElementsByTagName("LI");
       var i;
       for (i = 0; i < activityList.length; i++) {
@@ -101,7 +109,7 @@
         activityList[i].appendChild(span);
       }
 
-      // Click on a close button to hide the current list item
+      // delete item in list
       var close = document.getElementsByClassName("close");
       var i;
       for (i = 0; i < close.length; i++) {
@@ -111,7 +119,7 @@
         };
       }
 
-      // Add a "checked" symbol when clicking on a list item
+      // add tick to checked item
       var list = document.querySelector("ul");
       list.addEventListener(
         "click",
@@ -123,18 +131,18 @@
         false
       );
 
-      // Create a new list item when clicking on the "Add" button
+      // create new item on a list
       function newElement() {
         var li = document.createElement("li");
-        var inputValue = document.getElementById("changeInput").value;
+        var inputValue = document.getElementById("barrierInput").value;
         var t = document.createTextNode(inputValue);
         li.appendChild(t);
         if (inputValue === "") {
           alert("You must write something!");
         } else {
-          document.getElementById("changesList").appendChild(li);
+          document.getElementById("barriersList").appendChild(li);
         }
-        document.getElementById("changeInput").value = "";
+        document.getElementById("barrierInput").value = "";
 
         var span = document.createElement("SPAN");
         var txt = document.createTextNode("\u00D7");
