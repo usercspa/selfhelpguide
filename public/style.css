@@ -13,7 +13,6 @@ body {
 h1 {
   font-style: italic;
   color: #373fff;
-  max-width: calc(100% - 5rem);
   line-height: 1.1;
 }
 
@@ -63,7 +62,7 @@ footer {
 		}
 
     		.container {
-			background-color: #333333;
+			background-color: white;
 			text-align: center;
 			padding: 10px;
 			margin-left: 10px;
@@ -74,18 +73,24 @@ footer {
 		}
 
 		a {
-			color: #FFFFFF;
+			color: grey;
 		}
 
 		button {
 			test-align: center;
-			background-color: #333333;
+			background-color: blue;
 			color: #FFFFFF;
 			border-radius: 16%;
 		}
 
     body {
-      background-color: #1a1a1a;
+      background-color: #eeeeee;
       text-align: center;
       margin: 10px;
     }
+
+h3, p {
+  text-align: justify;
+}
+
+
