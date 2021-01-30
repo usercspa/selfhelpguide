@@ -14,6 +14,8 @@
     />
     <!-- stylesheet-->
     <link rel="stylesheet" href="style.css" />
+    <!-- javascript-->
+    <script src="scripts.js"></script>
     <!-- add font -->
     <link
       href="https://fonts.googleapis.com/css?family=Cookie"
@@ -31,25 +33,21 @@
       <h1>Develop a self-care plan</h1>
       <br />
     </header>
-      <h6>
-        Need some inspiration?
-        <a
-          href="https://www.changingfaces.org.uk/adviceandsupport/self-help/adults/self-care-planning"
-          >Take a look at the examples</a
-        >
-      </h6>
+    <h6>
+      Need some inspiration?
+      <a
+        href="https://www.changingfaces.org.uk/adviceandsupport/self-help/adults/self-care-planning"
+        >Take a look at the examples</a
+      >
+    </h6>
     <main>
       <div id="addThings" class="header">
-  <h3 style="margin:5px">Step 1: Positive self-care things I am doing</h3>
-  <input type="text" id="activityInput" placeholder="Type here...">
-  <span onclick="newElement()" class="add">Add</span>
-</div>
-      
-<ul id="activityList">
+        <h3 style="margin:5px">Step 1: Positive self-care things I am doing</h3>
+        <input type="text" id="activityInput" placeholder="Type here..." />
+        <span onclick="newElement()" class="add">Add</span>
+      </div>
 
-</ul>
-      
-      
+      <ul id="thingsList"></ul>
 
       <br />
       <button class="continue"><a href="/step2.html">Continue</a></button>
@@ -88,5 +86,67 @@
         >
       </ul>
     </footer>
+
+    <script>
+      // Create a "close" button and append it to each list item
+      var activityList = document.getElementsByTagName("LI");
+      var i;
+      for (i = 0; i < activityList.length; i++) {
+        var span = document.createElement("SPAN");
+        var txt = document.createTextNode("\u00D7");
+        span.className = "close";
+        span.appendChild(txt);
+        activityList[i].appendChild(span);
+      }
+
+      // Click on a close button to hide the current list item
+      var close = document.getElementsByClassName("close");
+      var i;
+      for (i = 0; i < close.length; i++) {
+        close[i].onclick = function() {
+          var div = this.parentElement;
+          div.style.display = "none";
+        };
+      }
+
+      // Add a "checked" symbol when clicking on a list item
+      var list = document.querySelector("ul");
+      list.addEventListener(
+        "click",
+        function(ev) {
+          if (ev.target.tagName === "LI") {
+            ev.target.classList.toggle("checked");
+          }
+        },
+        false
+      );
+
+      // Create a new list item when clicking on the "Add" button
+      function newElement() {
+        var li = document.createElement("li");
+        var inputValue = document.getElementById("activityInput").value;
+        var t = document.createTextNode(inputValue);
+        li.appendChild(t);
+        if (inputValue === "") {
+          alert("You must write something!");
+        } else {
+          document.getElementById("thingsList").appendChild(li);
+        }
+        document.getElementById("activityInput").value = "";
+
+        var span = document.createElement("SPAN");
+        var txt = document.createTextNode("\u00D7");
+        span.className = "close";
+        span.appendChild(txt);
+        li.appendChild(span);
+
+        for (i = 0; i < close.length; i++) {
+          close[i].onclick = function() {
+            var div = this.parentElement;
+            div.style.display = "none";
+          };
+        }
+      }
+    </script>
   </body>
 </html>
